@@ -131,7 +131,7 @@ const Navigation = () => {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography onClick={logout} textAlign="center">{setting}</Typography>
+                                    <Typography onClick={logout} textalign="center">{setting}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

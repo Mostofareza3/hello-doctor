@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Fade from '@mui/material/Fade';
+import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 
 const style = {
@@ -44,7 +44,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
             date: date.toLocaleDateString()
         }
         // send to the server
-        fetch('http://localhost:5000/appointments', {
+        fetch('https://thawing-journey-27522.herokuapp.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

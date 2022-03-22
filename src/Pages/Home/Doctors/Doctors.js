@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
 import { Container, Grid } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import Doctor from '../Doctor/Doctor';
 
 const Doctors = () => {
     const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/doctors')
+        fetch('https://thawing-journey-27522.herokuapp.com/doctors')
             .then(res => res.json())
             .then(data => setDoctors(data))
     }, [])

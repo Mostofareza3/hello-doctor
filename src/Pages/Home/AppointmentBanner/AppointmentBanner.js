@@ -1,47 +1,68 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import doctor from '../../../images/doctor.png'
-import bg from '../../../images/appointment-bg.png'
-import { Button, Typography } from '@mui/material';
+import styled from 'styled-components';
 
-const appointmentBanner = {
-    background: `url(${bg})`,
-    backgroundColor: 'rgba(45, 58, 74, 0.9)',
-    backgroundBlendMode: 'darken, luminosity',
-    marginTop: 175
-}
+const Wrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 0px ;
+    height: 80vh ;
+    padding: 0px 50px ;
+`;
+
+const Card = styled.div`
+    height: 500px ;
+    width: 300px ;
+    border: 1px solid cyan ;
+    padding:20px ;
+    box-shadow: 5px 5px 5px gray ;
+    border-radius: 10px ;
+`;
+const Image = styled.img`
+    width: 100% ;
+    height: 250px ;
+`;
+
+const H1 = styled.p`
+    font-size: 40px;
+    font-weight: 600
+    margin-bottom: -30px ;
+`;
 
 const AppointmentBanner = () => {
     return (
-        <Box style={appointmentBanner} sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <img
-                        style={{ width: 400, marginTop: '-110px' }}
-                        src={doctor} alt="" />
-                </Grid>
-                <Grid item xs={12} md={6} sx={{
-                    display: 'flex',
-                    justifyContent: 'flex-start',
-                    alignItems: 'center',
-                    textAlign: 'left'
-                }}>
-                    <Box>
-                        <Typography variant="h6" sx={{ mb: 5 }} style={{ color: '#5CE7ED' }}>
-                            Appointment
-                        </Typography>
-                        <Typography variant="h4" style={{ color: 'white' }}>
-                            Make an Appointment Today
-                        </Typography>
-                        <Typography variant="h6" sx={{ my: 5 }} style={{ color: 'white', fontSize: 14, fontWeight: 300 }}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi facere totam aliquam praesentium vel. Amet veniam odio vero doloremque laborum.
-                        </Typography>
-                        <Button variant="contained" style={{ backgroundColor: '#5CE7ED' }}>Learn More</Button>
-                    </Box>
-                </Grid>
-            </Grid>
-        </Box>
+        <>
+            <H1>Our Facilities</H1>
+            <Wrapper>
+                <Card>
+                    <div>
+                        <Image src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="" />
+                    </div>
+                    <div>
+                        <h4>World Leading Cadalogist</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat qui eaque reiciendis magni pariatur ea corporis vero, voluptatem iure. Aperiam vel, itaque debitis voluptatem velit labore fuga fugit sapiente beatae?</p>
+                    </div>
+                </Card>
+                <Card>
+                    <div>
+                        <Image src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="" />
+                    </div>
+                    <div>
+                        <h4>World Leading Cadalogist</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat qui eaque reiciendis magni pariatur ea corporis vero, voluptatem iure. Aperiam vel, itaque debitis voluptatem velit labore fuga fugit sapiente beatae?</p>
+                    </div>
+                </Card>
+                <Card>
+                    <div>
+                        <Image src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="" />
+                    </div>
+                    <div>
+                        <h4>World Leading Cadalogist</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat qui eaque reiciendis magni pariatur ea corporis vero, voluptatem iure. Aperiam vel, itaque debitis voluptatem velit labore fuga fugit sapiente beatae?</p>
+                    </div>
+                </Card>
+            </Wrapper>
+        </>
     );
 };
 

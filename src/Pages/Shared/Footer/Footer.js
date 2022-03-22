@@ -63,16 +63,16 @@ const ContactItem = styled.div`
 margin-bottom: 20px;
 display: flex;
 align-items: center;
-`; 
+`;
 const Payment = styled.img`
 width: 50%;
 `;
 
 const Footer = () => {
-    return (
-        <Container>
+  return (
+    <Container>
       <Left>
-        <Logo> Doctors Portal</Logo>
+        <Logo> Hello Doctor</Logo>
         <Desc>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt id
           maiores vel accusantium nesciunt mollitia natus quam eligendi adipisci
@@ -110,21 +110,21 @@ const Footer = () => {
       </Center>
       <Right>
 
-          <Title>Contact</Title>
-          <ContactItem>
-            <Room style={{marginRight: "10px"}}/> 123 pachlish , chattogram , Bangladesh. 
-          </ContactItem>
-          <ContactItem>
-             <Phone style={{marginRight: "10px"}}/> +01874438160
-          </ContactItem>
-          <ContactItem>
-            <MailOutline style={{marginRight: "10px"}}/> mostofa.reza3@gmail.com
-          </ContactItem>
+        <Title>Contact</Title>
+        <ContactItem>
+          <Room style={{ marginRight: "10px" }} /> 123 pachlish , chattogram , Bangladesh.
+        </ContactItem>
+        <ContactItem>
+          <Phone style={{ marginRight: "10px" }} /> +01874438160
+        </ContactItem>
+        <ContactItem>
+          <MailOutline style={{ marginRight: "10px" }} /> mostofa.reza3@gmail.com
+        </ContactItem>
 
-          <Payment src="https://i.ibb.co/tZVmMzQ/Payment-Options.jpg"/>
+        <Payment src="https://i.ibb.co/tZVmMzQ/Payment-Options.jpg" />
       </Right>
     </Container>
-    );
+  );
 };
 
 export default Footer;

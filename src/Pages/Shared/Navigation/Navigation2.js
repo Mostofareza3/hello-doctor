@@ -14,13 +14,11 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
-const pages = ['Home /home', 'Appointment /appointment', 'News /news', 'Dashboard /dashboard', 'Login /login'];
-const settings = ['Logout'];
+const pages = ['Home /home', 'Appointment /appointment', 'News /news', 'Dashboard /dashboard'];
 
 const Navigation2 = () => {
 
     const { user, logout } = useAuth();
-
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -48,9 +46,9 @@ const Navigation2 = () => {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                        sx={{ color: 'red', fontWeight: 'bold', mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                        Doctors Portal
+                        Hello Doctor
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -100,7 +98,7 @@ const Navigation2 = () => {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                <NavLink to={page.split(' ')[1]}>
+                                <NavLink style={{ textDecoration: 'none', color: 'white', fontSize: '13px' }} to={page.split(' ')[1]}>
                                     {page.split(' ')[0]}
                                 </NavLink>
                             </Button>
@@ -108,6 +106,9 @@ const Navigation2 = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
+                        <Typography variant="body2">
+                            {user && user?.displayName}
+                        </Typography>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src={user?.photoURL} />
@@ -129,11 +130,18 @@ const Navigation2 = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography onClick={logout} textAlign="center">{setting}</Typography>
+
+                            {/* {!user && <MenuItem onClick={handleCloseUserMenu}>
+                                <NavLink to="/login" textalign="center"> Login</NavLink>
+                            </MenuItem>} */}
+                            {
+                                user.email ? <MenuItem onClick={handleCloseUserMenu}>
+                                    <Typography onClick={logout} textalign="center"> Logout</Typography>
+                                </MenuItem> : <MenuItem onClick={handleCloseUserMenu}>
+                                    <NavLink to="/login" textalign="center"> Login</NavLink>
                                 </MenuItem>
-                            ))}
+                            }
+
                         </Menu>
                     </Box>
                 </Toolbar>

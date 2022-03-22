@@ -1,4 +1,4 @@
-import { Container, Paper, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
 import img1 from '../../../images/people-1.png';
@@ -11,11 +11,14 @@ const TestimonialContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 50px ;
 `;
 const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 50px ;
+
 `;
 const TestimonialItem = styled.div`
     width: 400px;
@@ -40,42 +43,42 @@ const Testimonial = () => {
             </Typography>
             <Wrapper>
                 <TestimonialItem>
-                    <Paper elevation={3} sx={{padding:'20px'}}>
+                    <Paper elevation={3} sx={{ padding: '20px' }}>
                         <P>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque nulla nemo voluptatum doloribus excepturi eius illo aut ut tempore a iusto sunt, sit dignissimos cum dolores ipsam et inventore amet!
                         </P>
 
                         <TestimonialImg>
                             <img src={img1} alt="" />
-                            <P sx={{marginLeft:'15px'}}>Kollin Marks</P>
+                            <P sx={{ marginLeft: '15px' }}>Kollin Marks</P>
                         </TestimonialImg>
                     </Paper>
                 </TestimonialItem>
                 <TestimonialItem>
-                    <Paper elevation={3} sx={{padding:'20px'}}>
+                    <Paper elevation={3} sx={{ padding: '20px' }}>
                         <P>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque nulla nemo voluptatum doloribus excepturi eius illo aut ut tempore a iusto sunt, sit dignissimos cum dolores ipsam et inventore amet!
                         </P>
 
                         <TestimonialImg>
                             <img src={img2} alt="" />
-                            <P sx={{marginLeft:'15px'}}>Emilly Marks</P>
+                            <P sx={{ marginLeft: '15px' }}>Emilly Marks</P>
                         </TestimonialImg>
                     </Paper>
                 </TestimonialItem>
                 <TestimonialItem>
-                    <Paper elevation={3} sx={{padding:'20px'}}>
+                    <Paper elevation={3} sx={{ padding: '20px' }}>
                         <P>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque nulla nemo voluptatum doloribus excepturi eius illo aut ut tempore a iusto sunt, sit dignissimos cum dolores ipsam et inventore amet!
                         </P>
 
                         <TestimonialImg>
                             <img src={img3} alt="" />
-                            <P sx={{marginLeft:'15px'}}>Kollin Marks</P>
+                            <P sx={{ marginLeft: '15px' }}>Kollin Marks</P>
                         </TestimonialImg>
                     </Paper>
                 </TestimonialItem>
-                
+
             </Wrapper>
         </TestimonialContainer>
     );

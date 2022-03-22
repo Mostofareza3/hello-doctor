@@ -1,8 +1,8 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './CheckoutForm';
-import { Elements } from '@stripe/react-stripe-js';
 
 const stripePromise = loadStripe('pk_test_51K7NKhGHsjR2mYmO0N7SlE5SaMXkn7sNXAwn7bXACYM06bSNcj0npGSl76MkPBDpr7jajllvRCt79SqD4Xwlz4Ut00gXTEFP3e')
 
@@ -10,7 +10,7 @@ const Payment = () => {
     const { appointmentId } = useParams();
     const [appointment, setAppointment] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/appointments/${appointmentId}`)
+        fetch(`https://thawing-journey-27522.herokuapp.com/appointments/${appointmentId}`)
             .then(res => res.json())
             .then(data => setAppointment(data));
     }, [appointmentId]);

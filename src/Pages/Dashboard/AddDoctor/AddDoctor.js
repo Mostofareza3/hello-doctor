@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { Button, Input, TextField } from '@mui/material';
+import React, { useState } from 'react';
 
 const AddDoctor = () => {
     const [name, setName] = useState('');
@@ -17,7 +17,7 @@ const AddDoctor = () => {
         formData.append('email', email);
         formData.append('image', image);
 
-        fetch('http://localhost:5000/doctors', {
+        fetch('https://thawing-journey-27522.herokuapp.com/doctors', {
             method: 'POST',
             body: formData
         })

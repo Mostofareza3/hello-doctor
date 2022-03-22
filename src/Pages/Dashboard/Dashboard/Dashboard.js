@@ -1,34 +1,18 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import './Dasboard.css'
-import { FaClipboardList,FaUser,FaUserCheck } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import { FaClipboardList, FaUser, FaUserCheck } from 'react-icons/fa';
 import { MdDashboard } from 'react-icons/md';
-import { GrUserAdmin } from 'react-icons/gr';
-
 import {
-    Link,
-    Outlet,
-    NavLink
-
+    NavLink, Outlet
 } from "react-router-dom";
-import { Button } from '@mui/material';
-import useAuth from '../../../hooks/useAuth';
 import styled from 'styled-components';
+import useAuth from '../../../hooks/useAuth';
+import './Dasboard.css';
+
 
 const Wrapper = styled.div`
 background: rgb(27,15,224);
@@ -44,7 +28,6 @@ function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { admin } = useAuth();
-    console.log(admin);
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -52,13 +35,14 @@ function Dashboard(props) {
     const drawer = (
         <Wrapper>
             <Toolbar />
-            <NavLink className="dashboard-link" to="/appointment"> <FaClipboardList/> Appointment</NavLink>
-            <NavLink className="dashboard-link" to="/dashboard"> <MdDashboard/> Dashboard</NavLink>
+            <NavLink className="dashboard-link" to="/home"> <FaClipboardList /> Home</NavLink>
+            <NavLink className="dashboard-link" to="/appointment"> <FaClipboardList /> Appointment</NavLink>
+            <NavLink className="dashboard-link" to="/dashboard"> <MdDashboard /> Dashboard</NavLink>
             {admin && <Box>
                 <NavLink className="dashboard-link" to={`/dashboard/makeAdmin`}>
-                   <FaUserCheck/> Make Admin</NavLink>
+                    <FaUserCheck /> Make Admin</NavLink>
                 <NavLink className="dashboard-link" to={`/dashboard/addDoctor`}>
-                   <FaUser/> Add Doctor</NavLink>
+                    <FaUser /> Add Doctor</NavLink>
             </Box>}
         </Wrapper>
     );
@@ -94,7 +78,7 @@ function Dashboard(props) {
             </AppBar> */}
             <Box
                 component="nav"
-                sx={{ width: { sm: drawerWidth },height: '100vh', flexShrink: { sm: 0 } }}
+                sx={{ width: { sm: drawerWidth }, height: '100vh', flexShrink: { sm: 0 } }}
                 aria-label="mailbox folders"
             >
                 <Drawer

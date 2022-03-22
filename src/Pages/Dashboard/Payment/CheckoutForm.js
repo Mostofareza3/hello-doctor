@@ -1,7 +1,6 @@
 import { CircularProgress } from '@mui/material';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 
 const CheckoutForm = ({ appointment }) => {
@@ -16,7 +15,7 @@ const CheckoutForm = ({ appointment }) => {
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://thawing-journey-27522.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -83,7 +82,7 @@ const CheckoutForm = ({ appointment }) => {
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
             //save to database for checking is user already payment for this or not?
-            const url = `http://localhost:5000/appointments/${_id}`;
+            const url = `https://thawing-journey-27522.herokuapp.com/appointments/${_id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

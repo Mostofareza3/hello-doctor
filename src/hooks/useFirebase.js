@@ -1,6 +1,6 @@
+import { createUserWithEmailAndPassword, getAuth, getIdToken, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { useEffect, useState } from 'react';
 import initializeFirebase from "../Pages/Login/Login/Firebase/firebase.init";
-import { useState, useEffect } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
 
 
 // initialize firebase app
@@ -86,7 +86,7 @@ const useFirebase = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://thawing-journey-27522.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -103,7 +103,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://thawing-journey-27522.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
